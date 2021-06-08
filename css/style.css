@@ -1,0 +1,471 @@
+@font-face {
+  font-family: GardensC;
+    src: url("../Media/fonts/GardensC.otf");
+}
+
+*{
+  font-family: GardensC;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-image: url("../Media/Images/ca3d6bb1c4766837f06ca398632df0b1.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+header{
+  background-color: #00e44c;
+  padding: 30px;
+  padding-bottom: 0;
+}
+
+.top {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img{
+  width: 300px;
+  margin-bottom: 20px;
+}
+.top button{
+  font-size: 2em;
+  border-radius: 10px;
+  outline: none;
+  background-color: #FF4500;
+  padding: 0.3em;
+}
+section{
+  max-width: 1200px;
+  padding: 30px;
+  margin: auto;
+}
+
+section h2{
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+/* слоган и кнопка */
+.tagline {
+  background-color: #AA2A53;
+}
+.tagline p{
+  font-size: 1.5em;
+}
+.tagline button{
+  border-radius: 40px;
+  background-color: #5FD2B5;
+  outline: none;
+  font-size: 1.5em;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+/* особенность горячих туров */
+.info{
+  background-color: #00e44c;
+}
+.info h2 {
+  padding: 10px;
+}
+.info h3 {
+  margin: auto;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 5px;
+}
+.info p{
+
+  font-size: 1.2em;
+}
+
+.info .content{
+  display: flex;
+  flex-direction: column;
+
+}
+.info li {
+  padding: 10px;
+  font-size: 1.4em;
+}
+/* Туры */
+
+.catalog {
+  background-color: #AA2A53;
+}
+.catalog label{
+  border: solid 1px black;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 1.3em;
+  background-color: #5FD2B5;
+  user-select: none;
+}
+.category{
+  padding: 20px;
+}
+.catalog input{
+  opacity: 0;
+  position: absolute;
+}
+
+#Russia:checked ~ .category #ruslabel,
+#Indonesia:checked ~ .category #indlabel,
+#China:checked ~ .category #chlabel,
+#all:checked ~ .category #allLabel,
+#Vietnam:checked ~ .category #vietlabel{
+  background-color: #4e555b;
+}
+.rus, .Ind, .Chi, .Viet{
+  display: none;
+}
+
+.card{
+  border: solid 1px;
+  text-align: center;
+  background-color: #1e7e34;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+}
+.card:hover{
+  transition: 0.7s;
+  border: solid wheat 1px;
+}
+
+#all:checked ~ .panel .rus,
+#all:checked ~ .panel .Ind,
+#all:checked ~ .panel .Chi,
+#all:checked ~ .panel .Viet{
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr;
+  column-gap: 17px;
+}
+
+#Russia:checked ~ .panel .rus,
+#Indonesia:checked ~ .panel .Ind,
+#China:checked ~ .panel .Chi,
+#Vietnam:checked ~ .panel .Viet{
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr;
+  column-gap: 17px;
+}
+
+/* Консультанты*/
+.consultant {
+  background-color: #00e44c;
+}
+
+.consultant .content{
+  display: flex;
+  justify-content: space-around;
+  font-size: large;
+  flex-wrap: wrap;
+}
+.consultant .cons{
+  bottom: auto;
+  font-size: 1.1em;
+}
+
+.consultant img{
+  border-radius: 50px;
+  width: 100%;
+}
+.advantages{
+  background-image: url("../Media/Images/6456456rt.jpg");
+}
+.advantages .content li{
+  width: 900px;
+  background-color: #e5e5e5;
+  margin-top: 30px;
+  border: solid 1px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.8em;
+}
+/* Сладер */
+.slide {
+  background-color: #AA2A53;
+
+}
+.wrapper {
+  height: 400px;
+  margin: 100px auto 0;
+  position: relative;
+  width: 700px;
+}
+
+.wrapper {
+  height: 600px;
+  margin: 100px auto 0;
+  position: relative;
+  width: 1100px;
+}
+
+.slider {
+  height: inherit;
+  overflow: hidden;
+  position: relative;
+  width: inherit;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+  -o-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.slides {
+  height: inherit;
+  opacity: 0;
+  position: absolute;
+  width: inherit;
+  z-index: 0;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+  -moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+  -o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+.slide1 {
+  background-image: url("../Media/Images/Горящие туры.jpg");
+  background-repeat: repeat;
+}
+.slide2 {
+  background-image: url("../Media/Images/4995833-plyazh-shezlongi-okean-rayskoe-mesto-letniy-otdyh-ekzotika-otpusk-uspokaivayuschie-iyul.jpg");
+  background-repeat: repeat;
+}
+.slide3 {
+  background-image: url("../Media/Images/1379633194_orel.jpg");
+  background-repeat: repeat;
+}
+.slide4 {
+  background-image: url("../Media/Images/Туры_в_Крым.jpg");
+  background-repeat: repeat;
+}
+
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4{
+  opacity: 1;
+  z-index: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+.wrapper > input {
+  display: none;
+}
+
+.wrapper .controls {
+  left: 50%;
+  margin-left: -98px;
+  position: absolute;
+}
+
+.wrapper label {
+  cursor: pointer;
+  display: inline-block;
+  height: 8px;
+  margin: 25px 12px 0 16px;
+  position: relative;
+  width: 8px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: background ease-in-out .5s;
+  -moz-transition: background ease-in-out .5s;
+  -o-transition: background ease-in-out .5s;
+  transition: background ease-in-out .5s;
+}
+
+.wrapper label:hover,
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4){
+  background: #ddd;
+}
+
+.wrapper label:after {
+  border: 2px solid #ddd;
+  content: " ";
+  display: block;
+  height: 12px;
+  left: -4px;
+  position: absolute;
+  top: -4px;
+  width: 12px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.comments {
+  background-color: #dddddd;
+  border: solid 1px;
+  border-radius: 10px;
+  margin-top: 100px;
+  justify-items: center;
+}
+.comment {
+
+  padding: 20px;
+  font-size: 1.3em;
+}
+h3 .time{
+  display: inline;
+}
+/* Кнопка с подбором*/
+.select{
+  background-color: #1e7e34;
+  display: flex;
+  justify-content: space-around;
+}
+.select h4{
+  font-size: 1.5em;
+}
+
+.select button{
+  border-radius: 30px;
+  text-align: center;
+  border-radius: 40px;
+  background-color: #FF4500;
+  outline: none;
+  font-size: 1.5em;
+  margin-top: 10px;
+  padding: 10px;
+}
+footer a{
+  border-radius: 2px;
+  background-color: #AA2A53;
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  background-color: #35D2AB;
+  outline: none;
+  font-size: 2em;
+}
+.up {
+
+}
+
+@media screen and (max-width: 375px){
+  .top{
+    flex-direction: column;
+  }
+
+  .tel, .call{
+    margin-top: 20px;
+  }
+
+  nav{
+    flex-direction: column;
+  }
+
+  nav a{
+    text-align: center;
+    padding: 0;
+    padding-top: 10px;
+  }
+
+  section h2{
+    font-size: 1.5em;
+  }
+
+  /*Особенности*/
+  .features .content{
+    flex-direction: column;
+    /*padding-top: 30px;*/
+    font-size: 1.5em;
+  }
+
+  .features .content div{
+    margin-top: 10px;
+  }
+  .advantages .content li{
+    width: auto;
+  }
+
+  label{
+    align-items: center;
+    justify-content: center;
+  display: flex;
+  }
+
+  #all:checked ~ .panel .rus,
+  #all:checked ~ .panel .Ind,
+  #all:checked ~ .panel .Chi,
+  #all:checked ~ .panel .Viet{
+    display: grid;
+    grid-template-columns:  1fr;
+    column-gap: 17px;
+  }
+  #Russia:checked ~ .panel .rus,
+  #Indonesia:checked ~ .panel .Ind,
+  #China:checked ~ .panel .Chi,
+  #Vietnam:checked ~ .panel .Viet{
+    display: grid;
+    grid-template-columns:  1fr;
+    column-gap: 17px;
+  }
+ .wrapper {
+   width: 100%;
+ }
+  .categories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categories label{
+    margin-top: 10px;
+  }
+
+  .consultant .content{
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+
+  .info .item{
+    flex-direction: column;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .info p{
+    padding: 0;
+  }
+
+  .info img{
+    width: 50%;
+  }
+  .select button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer a{
+    width: auto;
+    border-radius: 2px;
+    background-color: #AA2A53;
+    position: absolute;
+    display: inline-block;
+    background-color: #35D2AB;
+    outline: none;
+    font-size: 2em;
+  }
+
+}
